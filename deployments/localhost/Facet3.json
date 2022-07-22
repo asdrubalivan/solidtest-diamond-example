@@ -1,0 +1,80 @@
+{
+  "address": "0x16dD219C41090B1ac81C66Dbb74B45CfbD1CaB43",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getValFacet3",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getValLibrary2Facet3",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "upgradedDiamond",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd3a6044b894bfc12ce6fe5d7fd44439233b0158adbac64263e92cfac62ab8f8d",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "192006",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf42ff6285d6c3c68406259e0208644ab92ac85cabd32014dc3854c631bfd7042",
+    "transactionHash": "0xd3a6044b894bfc12ce6fe5d7fd44439233b0158adbac64263e92cfac62ab8f8d",
+    "logs": [],
+    "blockNumber": 13,
+    "cumulativeGasUsed": "192006",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 2,
+  "solcInputHash": "30e72370228d3712bee35a2224b4364e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getValFacet3\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getValLibrary2Facet3\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"upgradedDiamond\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Facet3.sol\":\"Facet3\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Facet3.sol\":{\"content\":\"pragma solidity ^0.8.0;\\n\\nimport {Library, Library2} from \\\"./Library.sol\\\";\\n\\ncontract Facet3 {\\n    function getValFacet3() public view returns (uint256) {\\n        return Library.layout().test_val;\\n    }\\n\\n    function getValLibrary2Facet3() public view returns (uint256) {\\n        return Library2.layout().test_val;\\n    }\\n\\n    function upgradedDiamond() public pure returns (string memory) {\\n        return \\\"Upgraded\\\";\\n    }\\n}\\n\",\"keccak256\":\"0x5c61688c0ebd2385d8362d6c2b13ec0a0c1917dad2a5dbc8e69b6d92e6afcfea\"},\"contracts/Library.sol\":{\"content\":\"pragma solidity ^0.8.0;\\n\\nlibrary Library {\\n    struct Layout {\\n        uint256 test_val;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"asdrubalivan.Library\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\\nlibrary Library2 {\\n    struct Layout {\\n        uint256 test_val;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"asdrubalivan.Library2\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x3fa14cd1d8fae459a61f38e2bc78ada05bbc1ea32fca07d2f312a6dfc90e4ebe\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610282806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063056df79414610046578063c91702d214610064578063d4c49f8614610082575b600080fd5b61004e6100a0565b60405161005b91906101f6565b60405180910390f35b61006c6100dd565b6040516100799190610231565b60405180910390f35b61008a6100f0565b6040516100979190610231565b60405180910390f35b60606040518060400160405280600881526020017f5570677261646564000000000000000000000000000000000000000000000000815250905090565b60006100e7610103565b60000154905090565b60006100fa610130565b60000154905090565b6000807f9c3b359eecd172b1259b12f960c4dcfd63c300785c408f82b119ca2f9d4cd61f90508091505090565b6000807f79a9f649d13dcae06d0ae815d62495e720eff6928ec33682ec67990c0209f31f90508091505090565b600081519050919050565b600082825260208201905092915050565b60005b8381101561019757808201518184015260208101905061017c565b838111156101a6576000848401525b50505050565b6000601f19601f8301169050919050565b60006101c88261015d565b6101d28185610168565b93506101e2818560208601610179565b6101eb816101ac565b840191505092915050565b6000602082019050818103600083015261021081846101bd565b905092915050565b6000819050919050565b61022b81610218565b82525050565b60006020820190506102466000830184610222565b9291505056fea26469706673582212206066361055428bda91bfb45a63c54eb223934ce653ab14691c270e645330f70064736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063056df79414610046578063c91702d214610064578063d4c49f8614610082575b600080fd5b61004e6100a0565b60405161005b91906101f6565b60405180910390f35b61006c6100dd565b6040516100799190610231565b60405180910390f35b61008a6100f0565b6040516100979190610231565b60405180910390f35b60606040518060400160405280600881526020017f5570677261646564000000000000000000000000000000000000000000000000815250905090565b60006100e7610103565b60000154905090565b60006100fa610130565b60000154905090565b6000807f9c3b359eecd172b1259b12f960c4dcfd63c300785c408f82b119ca2f9d4cd61f90508091505090565b6000807f79a9f649d13dcae06d0ae815d62495e720eff6928ec33682ec67990c0209f31f90508091505090565b600081519050919050565b600082825260208201905092915050565b60005b8381101561019757808201518184015260208101905061017c565b838111156101a6576000848401525b50505050565b6000601f19601f8301169050919050565b60006101c88261015d565b6101d28185610168565b93506101e2818560208601610179565b6101eb816101ac565b840191505092915050565b6000602082019050818103600083015261021081846101bd565b905092915050565b6000819050919050565b61022b81610218565b82525050565b60006020820190506102466000830184610222565b9291505056fea26469706673582212206066361055428bda91bfb45a63c54eb223934ce653ab14691c270e645330f70064736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "address": "0x815656DEEc7104A38168876B74416C191fEAaCc5",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getValFacet1",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_val",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValFacet1",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc40eb9e6eda9b45e2de6d7066b054d567b2e7bc7606c7981c3716f63a54670ac",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "contractAddress": null,
+    "transactionIndex": 0,
+    "gasUsed": "139878",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x6f083277d99609c99557813a92f512c9247e6c508dd89c6c388ec70a0527a3ee",
+    "transactionHash": "0xc40eb9e6eda9b45e2de6d7066b054d567b2e7bc7606c7981c3716f63a54670ac",
+    "logs": [],
+    "blockNumber": 3,
+    "cumulativeGasUsed": "139878",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "995a936f0096b1dace8f21b6c81ed728",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getValFacet1\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_val\",\"type\":\"uint256\"}],\"name\":\"setValFacet1\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Facet1.sol\":\"Facet1\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Facet1.sol\":{\"content\":\"pragma solidity ^0.8.0;\\n\\nimport {Library} from \\\"./Library.sol\\\";\\n\\ncontract Facet1 {\\n    function setValFacet1(uint256 _val) public {\\n        Library.layout().test_val = _val;\\n    }\\n\\n    function getValFacet1() public view returns (uint256) {\\n        return Library.layout().test_val;\\n    }\\n}\\n\",\"keccak256\":\"0x208dbb15e4c1070f541b592cab2f540b010479d713c053822f04e22ed6d69f60\"},\"contracts/Library.sol\":{\"content\":\"pragma solidity ^0.8.0;\\n\\nlibrary Library {\\n    struct Layout {\\n        uint256 test_val;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"asdrubalivan.Library\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\\nlibrary Library2 {\\n    struct Layout {\\n        uint256 test_val;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"asdrubalivan.Library2\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x3fa14cd1d8fae459a61f38e2bc78ada05bbc1ea32fca07d2f312a6dfc90e4ebe\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610190806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80631ec1b03f1461003b5780634dd9cf2014610057575b600080fd5b61005560048036038101906100509190610103565b610075565b005b61005f610088565b60405161006c919061013f565b60405180910390f35b8061007e61009b565b6000018190555050565b600061009261009b565b60000154905090565b6000807f79a9f649d13dcae06d0ae815d62495e720eff6928ec33682ec67990c0209f31f90508091505090565b600080fd5b6000819050919050565b6100e0816100cd565b81146100eb57600080fd5b50565b6000813590506100fd816100d7565b92915050565b600060208284031215610119576101186100c8565b5b6000610127848285016100ee565b91505092915050565b610139816100cd565b82525050565b60006020820190506101546000830184610130565b9291505056fea2646970667358221220f0d7c0044b383df64d71f21bb19b4e5679b293f66ea67ea008563c3f0661d4f164736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80631ec1b03f1461003b5780634dd9cf2014610057575b600080fd5b61005560048036038101906100509190610103565b610075565b005b61005f610088565b60405161006c919061013f565b60405180910390f35b8061007e61009b565b6000018190555050565b600061009261009b565b60000154905090565b6000807f79a9f649d13dcae06d0ae815d62495e720eff6928ec33682ec67990c0209f31f90508091505090565b600080fd5b6000819050919050565b6100e0816100cd565b81146100eb57600080fd5b50565b6000813590506100fd816100d7565b92915050565b600060208284031215610119576101186100c8565b5b6000610127848285016100ee565b91505092915050565b610139816100cd565b82525050565b60006020820190506101546000830184610130565b9291505056fea2646970667358221220f0d7c0044b383df64d71f21bb19b4e5679b293f66ea67ea008563c3f0661d4f164736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

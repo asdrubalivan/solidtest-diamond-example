@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Facet3.sol": {
+      "content": "pragma solidity ^0.8.0;\n\nimport {Library, Library2} from \"./Library.sol\";\n\ncontract Facet3 {\n    function getValFacet3() public view returns (uint256) {\n        return Library.layout().test_val;\n    }\n\n    function getValLibrary2Facet3() public view returns (uint256) {\n        return Library2.layout().test_val;\n    }\n\n    function upgradedDiamond() public pure returns (string memory) {\n        return \"Upgraded\";\n    }\n}\n"
+    },
+    "contracts/Library.sol": {
+      "content": "pragma solidity ^0.8.0;\n\nlibrary Library {\n    struct Layout {\n        uint256 test_val;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"asdrubalivan.Library\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n\nlibrary Library2 {\n    struct Layout {\n        uint256 test_val;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"asdrubalivan.Library2\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
